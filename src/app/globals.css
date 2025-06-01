@@ -1,14 +1,35 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-/* === Light Mode Variables === */
+/* === Base Color Palette === */
 :root {
+  /* Brand Colors */
+  --color-night: #0d160b;
+  --color-pomp-and-power: #785589;
+  --color-mountbatten-pink: #977390;
+  --color-old-rose: #ac7b7d;
+  --color-rosy-brown: #bb8a89;
+
+  /* Light Mode Defaults */
   --background: #ffffff;
   --foreground: #171717;
 
-  /* DaisyUI-compatible theme mappings */
-  --tw-bg-base-100: var(--background);
-  --tw-text-base-content: var(--foreground);
+  /* DaisyUI base theme mappings */
+  --b1: var(--background);
+  /* Base background */
+  --b2: #f0f0f0;
+  --b3: #e0e0e0;
+  --bc: var(--foreground);
+  /* Base content */
+  --p: var(--color-old-rose);
+  --pc: #ffffff;
+  --s: var(--color-pomp-and-power);
+  --sc: #ffffff;
+  --a: var(--color-rosy-brown);
+  --ac: #ffffff;
+
+  /* Optional info, success, warning, error */
+  --info: var(--color-mountbatten-pink);
 }
 
 /* === Dark Mode Variables === */
@@ -16,8 +37,33 @@ html.dark {
   --background: #0a0a0a;
   --foreground: #ededed;
 
-  --tw-bg-base-100: var(--background);
-  --tw-text-base-content: var(--foreground);
+  --b1: var(--color-night);
+  --b2: var(--color-pomp-and-power);
+  --b3: var(--color-mountbatten-pink);
+  --bc: var(--color-rosy-brown);
+  --p: var(--color-old-rose);
+  --pc: #ffffff;
+  --s: var(--color-pomp-and-power);
+  --sc: #ffffff;
+  --a: var(--color-rosy-brown);
+  --ac: #ffffff;
+
+  --info: var(--color-mountbatten-pink);
+}
+
+/* === Optional: DaisyUI named theme for custom toggle support === */
+[data-theme="customdark"] {
+  --b1: var(--color-night);
+  --b2: var(--color-pomp-and-power);
+  --b3: var(--color-mountbatten-pink);
+  --bc: var(--color-rosy-brown);
+  --p: var(--color-old-rose);
+  --pc: #ffffff;
+  --s: var(--color-pomp-and-power);
+  --sc: #ffffff;
+  --a: var(--color-rosy-brown);
+  --ac: #ffffff;
+  --info: var(--color-mountbatten-pink);
 }
 
 /* === Global Styling === */
