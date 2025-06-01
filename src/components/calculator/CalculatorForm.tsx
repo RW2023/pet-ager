@@ -22,11 +22,11 @@ export default function CalculatorForm({ onResult }: { onResult: (result: string
     return (
         <form
             onSubmit={handleSubmit}
-            className="flex flex-col gap-y-6 p-6 rounded-lg shadow-md bg-base-100"
+            className="flex flex-col gap-y-8 p-6 rounded-lg shadow-md bg-base-100"
         >
-            <div className="form-control gap-y-2">
-                <label htmlFor="species" className="label p-0">
-                    <span className="label-text text-sm">Species</span>
+            <div className="form-control">
+                <label htmlFor="species" className="label">
+                    <span className="label-text text-base font-medium">Species</span>
                 </label>
                 <select
                     id="species"
@@ -39,9 +39,9 @@ export default function CalculatorForm({ onResult }: { onResult: (result: string
                 </select>
             </div>
 
-            <div className="form-control gap-y-2">
-                <label htmlFor="direction" className="label p-0">
-                    <span className="label-text text-sm">Direction</span>
+            <div className="form-control">
+                <label htmlFor="direction" className="label">
+                    <span className="label-text text-base font-medium">Direction</span>
                 </label>
                 <select
                     id="direction"
@@ -54,9 +54,9 @@ export default function CalculatorForm({ onResult }: { onResult: (result: string
                 </select>
             </div>
 
-            <div className="form-control gap-y-2">
-                <label htmlFor="age" className="label p-0">
-                    <span className="label-text text-sm">Age</span>
+            <div className="form-control">
+                <label htmlFor="age" className="label">
+                    <span className="label-text text-base font-medium">Age</span>
                 </label>
                 <input
                     id="age"
