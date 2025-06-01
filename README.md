@@ -38,21 +38,38 @@ _Theme-aware, mobile-friendly design with interactive UI components._
 
 Make sure to add your Formspree project ID in .env.local:
 
-ini
-Copy
-Edit
+
 NEXT_PUBLIC_FORMSPREE_ID=your_form_id_here
 
-📂 Project Structure
-├── app/                 # Next.js App Router structure
-│   ├── page.tsx         # Homepage with calculator
-│   ├── about/           # About page with info
-│   ├── contact/         # Contact form
-├── components/          # Reusable components
-├── lib/                 # Age calculation logic
-├── public/              # Static assets (e.g., OG image, logo)
-├── styles/              # Global CSS and Tailwind setup
-└── .env.local.example   # Environment variables
+## 📂 Project Structure
+
+```
+pet-age-calculator/
+├── app/                        # Next.js App Router entry
+│   ├── layout.tsx             # Root layout with ThemeProvider and global styles
+│   ├── page.tsx               # Home page with calculator
+│   ├── about/                 # About page route
+│   │   └── page.tsx
+│   ├── contact/               # Contact page route
+│   │   └── page.tsx
+├── components/                # Reusable UI components
+│   ├── CalculatorForm.tsx     # Form for pet/human age input
+│   ├── CalculatorResult.tsx   # Result display component
+│   ├── ContactForm.tsx        # Contact form component
+│   └── ThemeToggle.tsx        # Light/dark mode switcher
+├── lib/                       
+│   └── calculateAge.ts        # Core logic for age conversion
+├── public/                    
+│   ├── og-image.png           # Social share image
+│   └── favicon.ico            # Favicon
+├── styles/
+│   └── globals.css            # Tailwind & DaisyUI custom variables
+├── .env.local.example         # Environment variable example for Formspree
+├── tailwind.config.ts         # Tailwind configuration (optional if inline)
+├── tsconfig.json              # TypeScript configuration
+└── README.md                  # Project documentation
+```
+
 
 ## 🎯 Purpose of This Project
 
