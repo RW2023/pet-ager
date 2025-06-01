@@ -32,7 +32,7 @@ export default function HeroSection() {
                     alt="Dog and cat illustration"
                     width={500}
                     height={400}
-                    className="w-auto h-auto max-w-[90%] md:max-w-full"
+                    className="w-auto h-auto max-w-[90%] md:max-w-full rounded-2xl drop-shadow-lg"
                     priority
                 />
             </div>
