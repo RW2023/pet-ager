@@ -18,7 +18,14 @@ export default function Navbar() {
     const [mobileOpen, setMobileOpen] = useState(false)
 
     return (
-        <nav className="bg-base-100 text-base-content sticky top-0 z-50 border-b border-base-300 shadow-sm">
+        <nav
+            className="sticky top-0 z-50 shadow-sm border-b transition-colors duration-300"
+            style={{
+                backgroundColor: 'var(--background)',
+                color: 'var(--foreground)',
+                borderColor: 'rgba(0,0,0,0.1)',
+            }}
+        >
             <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-20">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2">
@@ -38,7 +45,8 @@ export default function Navbar() {
                         <Link
                             key={item.name}
                             href={item.href}
-                            className="hover:text-primary font-medium transition"
+                            className="font-medium hover:underline transition"
+                            style={{ color: 'var(--foreground)' }}
                         >
                             {item.name}
                         </Link>
@@ -64,7 +72,12 @@ export default function Navbar() {
                         animate={{ x: 0, opacity: 1 }}
                         exit={{ x: '100%', opacity: 0 }}
                         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                        className="md:hidden bg-base-100 border-t border-base-300"
+                        className="md:hidden border-t"
+                        style={{
+                            backgroundColor: 'var(--background)',
+                            color: 'var(--foreground)',
+                            borderColor: 'rgba(0,0,0,0.1)',
+                        }}
                     >
                         <div className="px-4 py-6 space-y-4">
                             {navItems.map((item) => (
@@ -72,7 +85,7 @@ export default function Navbar() {
                                     key={item.name}
                                     href={item.href}
                                     onClick={() => setMobileOpen(false)}
-                                    className="block text-lg font-medium hover:text-primary transition"
+                                    className="block text-lg font-medium hover:underline transition"
                                 >
                                     {item.name}
                                 </Link>

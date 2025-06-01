@@ -81,71 +81,101 @@ export default function ContactForm() {
         <form
             ref={formRef}
             onSubmit={handleSubmit}
-            className="space-y-6 bg-base-100 p-6 rounded-box shadow-md"
             noValidate
+            className="space-y-6 rounded-lg shadow-md p-6 transition-colors duration-300"
+            style={{
+                backgroundColor: 'var(--background)',
+                color: 'var(--foreground)',
+            }}
         >
             {!formspreeAction && (
-                <p className="text-error font-semibold">
+                <p style={{ color: 'red', fontWeight: '600' }}>
                     ⚠️ Formspree ID missing. Check <code>.env.local</code>
                 </p>
             )}
 
             {/* Name */}
-            <div className="form-control">
-                <label className="label font-semibold" htmlFor="name">
-                    <span className="label-text">Name</span>
+            <div>
+                <label htmlFor="name" className="font-semibold block mb-1">
+                    Name
                 </label>
                 <input
                     type="text"
                     id="name"
                     name="name"
                     placeholder="Your Name"
-                    className={`input input-bordered ${errors.name ? 'input-error' : ''}`}
+                    className="w-full px-4 py-2 border rounded-md bg-transparent"
+                    style={{
+                        borderColor: errors.name ? 'red' : 'var(--foreground)',
+                        color: 'var(--foreground)',
+                    }}
                     title="Enter your full name"
                 />
-                {errors.name && <p className="text-error text-sm mt-1">{errors.name}</p>}
+                {errors.name && <p className="text-sm mt-1" style={{ color: 'red' }}>{errors.name}</p>}
             </div>
 
             {/* Email */}
-            <div className="form-control">
-                <label className="label font-semibold" htmlFor="email">
-                    <span className="label-text">Email</span>
+            <div>
+                <label htmlFor="email" className="font-semibold block mb-1">
+                    Email
                 </label>
                 <input
                     type="email"
                     id="email"
                     name="email"
                     placeholder="you@example.com"
-                    className={`input input-bordered ${errors.email ? 'input-error' : ''}`}
+                    className="w-full px-4 py-2 border rounded-md bg-transparent"
+                    style={{
+                        borderColor: errors.email ? 'red' : 'var(--foreground)',
+                        color: 'var(--foreground)',
+                    }}
                     title="Enter a valid email address"
                 />
-                {errors.email && <p className="text-error text-sm mt-1">{errors.email}</p>}
+                {errors.email && <p className="text-sm mt-1" style={{ color: 'red' }}>{errors.email}</p>}
             </div>
 
             {/* Message */}
-            <div className="form-control">
-                <label className="label font-semibold" htmlFor="message">
-                    <span className="label-text">Message</span>
+            <div>
+                <label htmlFor="message" className="font-semibold block mb-1">
+                    Message
                 </label>
                 <textarea
                     id="message"
                     name="message"
                     placeholder="Type your message here..."
-                    className={`textarea textarea-bordered min-h-[150px] ${errors.message ? 'textarea-error' : ''
-                        }`}
+                    className="w-full px-4 py-2 min-h-[150px] border rounded-md bg-transparent"
+                    style={{
+                        borderColor: errors.message ? 'red' : 'var(--foreground)',
+                        color: 'var(--foreground)',
+                    }}
                     title="Write your message"
                 />
-                {errors.message && <p className="text-error text-sm mt-1">{errors.message}</p>}
+                {errors.message && (
+                    <p className="text-sm mt-1" style={{ color: 'red' }}>{errors.message}</p>
+                )}
             </div>
 
             {/* Honeypot */}
-            <input title='gotim' type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
+            <input
+                type="text"
+                name="_gotcha"
+                className="hidden"
+                tabIndex={-1}
+                autoComplete="off"
+                title="gotim"
+            />
 
             {/* Submit */}
             <button
                 type="submit"
                 disabled={!formspreeAction || isSubmitting}
-                className="btn btn-primary btn-block gap-2 text-lg"
+                className="w-full flex items-center justify-center gap-2 px-6 py-2 rounded-md font-semibold transition hover:brightness-110"
+                style={{
+                    backgroundColor: 'var(--color-old-rose)',
+                    color: 'var(--pc)',
+                    cursor: isSubmitting ? 'not-allowed' : 'pointer',
+                    opacity: isSubmitting ? 0.6 : 1,
+                }}
             >
                 <SendHorizonal className="w-5 h-5" />
                 {isSubmitting ? 'Sending...' : 'Send Message'}

@@ -5,7 +5,13 @@ import { motion } from 'framer-motion';
 
 export default function AboutPage() {
     return (
-        <section className="min-h-screen px-6 md:px-20 py-16 bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+        <section
+            className="min-h-screen px-6 md:px-20 py-16 transition-colors duration-300"
+            style={{
+                backgroundColor: 'var(--background)',
+                color: 'var(--foreground)',
+            }}
+        >
             <motion.div
                 className="max-w-3xl mx-auto"
                 initial={{ opacity: 0, y: 20 }}
@@ -40,7 +46,11 @@ export default function AboutPage() {
                         Got feedback or suggestions?{' '}
                         <Link
                             href="/contact"
-                            className="inline-block mt-2 px-4 py-2 rounded-md text-white bg-green-600 hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600 transition"
+                            className="inline-block mt-2 px-4 py-2 rounded-md font-medium transition"
+                            style={{
+                                backgroundColor: 'var(--color-old-rose)',
+                                color: 'var(--pc)',
+                            }}
                         >
                             Contact us here
                         </Link>
