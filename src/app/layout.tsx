@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins, Lato } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { ThemeProvider } from 'next-themes';
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -31,7 +32,9 @@ export default function RootLayout({
         className={`${lato.variable} ${poppins.variable}`}
       >
         <Navbar />  
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         {children}
+        </ThemeProvider>
       </body>
     </html>
   );
