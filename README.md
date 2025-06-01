@@ -36,6 +36,31 @@ A responsive, theme-aware web app that converts pet years to human years—and v
 
 _Theme-aware, mobile-friendly design with interactive UI components._
 
+Make sure to add your Formspree project ID in .env.local:
+
+ini
+Copy
+Edit
+NEXT_PUBLIC_FORMSPREE_ID=your_form_id_here
+
+📂 Project Structure
+├── app/                 # Next.js App Router structure
+│   ├── page.tsx         # Homepage with calculator
+│   ├── about/           # About page with info
+│   ├── contact/         # Contact form
+├── components/          # Reusable components
+├── lib/                 # Age calculation logic
+├── public/              # Static assets (e.g., OG image, logo)
+├── styles/              # Global CSS and Tailwind setup
+└── .env.local.example   # Environment variables
+
+## 🎯 Purpose of This Project
+
+My family recently welcomed a new kitten, and naturally, the question came up: *"How old is she in human years?"* After doing some research, I realized that the common idea of just multiplying by 7 or adding 14 per year doesn’t reflect the actual biology of pet aging. The real conversion varies by species and age.
+
+As a developer and a parent, I decided to let JavaScript do the math. This app was built so I could give my kids accurate answers anytime they asked about our pet’s age. At the same time, it became a great opportunity to demonstrate my front-end development skills, design sense, and ability to turn a real-world question into a polished, responsive tool.
+
+
 ## 🚀 Getting Started
 
 To run this project locally:
