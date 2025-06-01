@@ -1,6 +1,6 @@
 # 🐾 Pet Age Calculator
 
-A responsive, theme-aware web app that converts pet years to human years—and vice versa—for dogs and cats. This projects pupose is to continue my passion for front-end development. This is an excuse to practice form handling, dark mode theming, and clean UI/UX with Tailwind CSS and DaisyUI. It is also a handy utility 😊
+A responsive, theme-aware web app that converts pet years to human years and vice versa for dogs and cats. This projects pupose is to continue my passion for front-end development. This is an excuse to practice form handling, dark mode theming, and clean UI/UX with Tailwind CSS and DaisyUI. It is also a handy utility 😊
 
 ## 🌟 Features
 
@@ -34,7 +34,7 @@ A responsive, theme-aware web app that converts pet years to human years—and v
 
 ![Pet Age Calculator Screenshot](/public//Screenshot.png)
 
-_Theme-aware, mobile-friendly design with interactive UI components._
+_Theme-aware, mobile-friendly design with interactive UI components.
 
 Make sure to add your Formspree project ID in .env.local:
 
