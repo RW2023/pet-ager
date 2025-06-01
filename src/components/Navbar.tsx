@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
+import ThemeToggle from './ThemeToggle'
 
 const navItems = [
     { name: 'Home', href: '/' },
@@ -42,6 +43,7 @@ export default function Navbar() {
                             {item.name}
                         </Link>
                     ))}
+                    <ThemeToggle />
                 </div>
 
                 {/* Mobile Toggle */}
@@ -75,6 +77,7 @@ export default function Navbar() {
                                     {item.name}
                                 </Link>
                             ))}
+                            <ThemeToggle />
                         </div>
                     </motion.div>
                 )}
