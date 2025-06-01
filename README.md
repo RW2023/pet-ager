@@ -32,7 +32,7 @@ A responsive, theme-aware web app that converts pet years to human years—and v
 
 ## 📸 Preview
 
-![Pet Age Calculator Screenshot](/screenshot.png)
+![Pet Age Calculator Screenshot](/Screenshot.png)
 
 _Theme-aware, mobile-friendly design with interactive UI components._
 
