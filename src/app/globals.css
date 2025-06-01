@@ -11,15 +11,13 @@
   --tw-text-base-content: var(--foreground);
 }
 
-/* === Dark Mode Overrides === */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* === Dark Mode Variables === */
+html.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
 
-    --tw-bg-base-100: var(--background);
-    --tw-text-base-content: var(--foreground);
-  }
+  --tw-bg-base-100: var(--background);
+  --tw-text-base-content: var(--foreground);
 }
 
 /* === Global Styling === */
