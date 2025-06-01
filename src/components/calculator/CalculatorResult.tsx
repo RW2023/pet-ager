@@ -1,5 +1,3 @@
-// File: components/calculator/CalculatorResult.tsx
-
 export default function CalculatorResult({ result }: { result: string }) {
     return (
         <div className="mt-8 p-6 rounded-lg bg-base-200 text-base-content shadow">
@@ -8,4 +6,3 @@ export default function CalculatorResult({ result }: { result: string }) {
         </div>
     );
 }
-  

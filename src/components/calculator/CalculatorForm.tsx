@@ -1,5 +1,3 @@
-// File: components/calculator/CalculatorForm.tsx
-
 'use client'
 
 import { useState } from 'react';
@@ -22,11 +20,16 @@ export default function CalculatorForm({ onResult }: { onResult: (result: string
     };
 
     return (
-        <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="form-control">
-                <label className="label">Species</label>
+        <form
+            onSubmit={handleSubmit}
+            className="flex flex-col gap-y-6 p-6 rounded-lg shadow-md bg-base-100"
+        >
+            <div className="form-control gap-y-2">
+                <label htmlFor="species" className="label p-0">
+                    <span className="label-text text-sm">Species</span>
+                </label>
                 <select
-                    title='species'
+                    id="species"
                     className="select select-bordered"
                     value={species}
                     onChange={(e) => setSpecies(e.target.value as 'dog' | 'cat')}
@@ -36,10 +39,12 @@ export default function CalculatorForm({ onResult }: { onResult: (result: string
                 </select>
             </div>
 
-            <div className="form-control">
-                <label className="label">Direction</label>
+            <div className="form-control gap-y-2">
+                <label htmlFor="direction" className="label p-0">
+                    <span className="label-text text-sm">Direction</span>
+                </label>
                 <select
-                    title='direction'
+                    id="direction"
                     className="select select-bordered"
                     value={direction}
                     onChange={(e) => setDirection(e.target.value as 'toHuman' | 'toPet')}
@@ -49,21 +54,32 @@ export default function CalculatorForm({ onResult }: { onResult: (result: string
                 </select>
             </div>
 
-            <div className="form-control">
-                <label className="label">Age</label>
+            <div className="form-control gap-y-2">
+                <label htmlFor="age" className="label p-0">
+                    <span className="label-text text-sm">Age</span>
+                </label>
                 <input
-                    title='age'
+                    id="age"
                     type="number"
                     className="input input-bordered"
                     value={age}
                     onChange={(e) => setAge(e.target.value)}
                     min="0"
+                    placeholder="Enter age in years"
                     required
                 />
             </div>
 
             <button type="submit" className="btn btn-primary w-full">
                 Calculate
+            </button>
+
+            <button
+                type="reset"
+                className="btn btn-ghost w-full"
+                onClick={() => setAge('')}
+            >
+                Reset
             </button>
         </form>
     );

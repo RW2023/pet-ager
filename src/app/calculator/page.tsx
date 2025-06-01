@@ -1,4 +1,3 @@
-// File: app/calculator/page.tsx
 'use client';
 
 import CalculatorForm from "@/components/calculator/CalculatorForm";
