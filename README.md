@@ -81,7 +81,7 @@ As a developer and a parent, I decided to let JavaScript do the math. This app w
 To run this project locally:
 
 ```bash
-git clone https://github.com/yourusername/pet-age-calculator.git
+git clone https://github.com/RW2023/pet-age-calculator.git
 cd pet-age-calculator
 npm install
 npm run dev
