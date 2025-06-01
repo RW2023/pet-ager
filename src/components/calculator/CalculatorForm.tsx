@@ -7,12 +7,13 @@ export default function CalculatorForm({ onResult }: { onResult: (result: string
     const [species, setSpecies] = useState<'dog' | 'cat'>('dog');
     const [direction, setDirection] = useState<'toHuman' | 'toPet'>('toHuman');
     const [age, setAge] = useState('');
+    const [size, setSize] = useState<'small' | 'medium' | 'large'>('medium');
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         const numericAge = parseFloat(age);
         if (!isNaN(numericAge)) {
-            const result = calculatePetAge(species, direction, numericAge);
+            const result = calculatePetAge(species, direction, numericAge, species === 'dog' ? size : undefined);
             onResult(result);
         } else {
             onResult('Please enter a valid number.');
@@ -38,6 +39,24 @@ export default function CalculatorForm({ onResult }: { onResult: (result: string
                     <option value="cat">Cat</option>
                 </select>
             </div>
+
+            {species === 'dog' && (
+                <div className="form-control">
+                    <label htmlFor="size" className="label">
+                        <span className="label-text text-base font-medium">Dog Size</span>
+                    </label>
+                    <select
+                        id="size"
+                        className="select select-bordered"
+                        value={size}
+                        onChange={(e) => setSize(e.target.value as 'small' | 'medium' | 'large')}
+                    >
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                    </select>
+                </div>
+            )}
 
             <div className="form-control">
                 <label htmlFor="direction" className="label">
