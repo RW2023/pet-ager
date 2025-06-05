@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { Calculator, RotateCcw } from 'lucide-react'
 import calculatePetAge from '@/lib/calculateAge'
 
 export default function CalculatorForm({ onResult }: { onResult: (result: string) => void }) {
@@ -28,11 +29,7 @@ export default function CalculatorForm({ onResult }: { onResult: (result: string
     return (
         <form
             onSubmit={handleSubmit}
-            className="flex flex-col gap-y-8 p-6 rounded-lg shadow-md transition-colors duration-300"
-            style={{
-                backgroundColor: 'var(--background)',
-                color: 'var(--foreground)',
-            }}
+            className="card bg-base-100 shadow-md p-6 space-y-8"
         >
             {/* Species Select */}
             <div className="form-control">
@@ -43,7 +40,7 @@ export default function CalculatorForm({ onResult }: { onResult: (result: string
                     id="species"
                     value={species}
                     onChange={(e) => setSpecies(e.target.value as 'dog' | 'cat')}
-                    className="border border-gray-300 dark:border-gray-600 rounded-md px-4 py-2 bg-transparent"
+                    className="select select-bordered w-full"
                 >
                     <option value="dog">Dog</option>
                     <option value="cat">Cat</option>
@@ -60,7 +57,7 @@ export default function CalculatorForm({ onResult }: { onResult: (result: string
                         id="size"
                         value={size}
                         onChange={(e) => setSize(e.target.value as 'small' | 'medium' | 'large')}
-                        className="border border-gray-300 dark:border-gray-600 rounded-md px-4 py-2 bg-transparent"
+                        className="select select-bordered w-full"
                     >
                         <option value="small">Small</option>
                         <option value="medium">Medium</option>
@@ -78,7 +75,7 @@ export default function CalculatorForm({ onResult }: { onResult: (result: string
                     id="direction"
                     value={direction}
                     onChange={(e) => setDirection(e.target.value as 'toHuman' | 'toPet')}
-                    className="border border-gray-300 dark:border-gray-600 rounded-md px-4 py-2 bg-transparent"
+                    className="select select-bordered w-full"
                 >
                     <option value="toHuman">Pet → Human Years</option>
                     <option value="toPet">Human → Pet Years</option>
@@ -98,27 +95,25 @@ export default function CalculatorForm({ onResult }: { onResult: (result: string
                     placeholder="Enter age in years"
                     min="0"
                     required
-                    className="border border-gray-300 dark:border-gray-600 rounded-md px-4 py-2 bg-transparent"
+                    className="input input-bordered w-full"
                 />
             </div>
 
             {/* Buttons */}
             <button
                 type="submit"
-                className="w-full px-6 py-2 rounded-md font-semibold shadow transition hover:brightness-110"
-                style={{
-                    backgroundColor: 'var(--color-old-rose)',
-                    color: 'var(--pc)',
-                }}
+                className="btn btn-primary w-full"
             >
+                <Calculator className="w-4 h-4" />
                 Calculate
             </button>
 
             <button
                 type="reset"
-                className="w-full px-6 py-2 rounded-md font-medium border border-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+                className="btn btn-outline w-full"
                 onClick={() => setAge('')}
             >
+                <RotateCcw className="w-4 h-4" />
                 Reset
             </button>
         </form>
