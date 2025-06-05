@@ -65,13 +65,19 @@ export default function ContactForm() {
             const data = await res.json()
 
             if (res.ok) {
-                toast.success('Message sent successfully!')
+                toast.success('Message sent successfully!', {
+                    style: { background: 'var(--color-old-rose)', color: '#fff' },
+                })
                 formRef.current.reset()
             } else {
-                toast.error(data?.message || 'Something went wrong.')
+                toast.error(data?.message || 'Something went wrong.', {
+                    style: { background: 'var(--color-mountbatten-pink)', color: '#fff' },
+                })
             }
         } catch {
-            toast.error('Failed to send. Please try again later.')
+            toast.error('Failed to send. Please try again later.', {
+                style: { background: 'var(--color-mountbatten-pink)', color: '#fff' },
+            })
         } finally {
             setIsSubmitting(false)
         }
@@ -82,11 +88,7 @@ export default function ContactForm() {
             ref={formRef}
             onSubmit={handleSubmit}
             noValidate
-            className="space-y-6 rounded-lg shadow-md p-6 transition-colors duration-300"
-            style={{
-                backgroundColor: 'var(--background)',
-                color: 'var(--foreground)',
-            }}
+            className="card bg-base-100 shadow-md p-6 space-y-6"
         >
             {!formspreeAction && (
                 <p style={{ color: 'red', fontWeight: '600' }}>
@@ -95,7 +97,7 @@ export default function ContactForm() {
             )}
 
             {/* Name */}
-            <div>
+            <div className="form-control">
                 <label htmlFor="name" className="font-semibold block mb-1">
                     Name
                 </label>
@@ -104,18 +106,15 @@ export default function ContactForm() {
                     id="name"
                     name="name"
                     placeholder="Your Name"
-                    className="w-full px-4 py-2 border rounded-md bg-transparent"
-                    style={{
-                        borderColor: errors.name ? 'red' : 'var(--foreground)',
-                        color: 'var(--foreground)',
-                    }}
+                    className="input input-bordered w-full"
+                    style={{ borderColor: errors.name ? 'red' : undefined }}
                     title="Enter your full name"
                 />
                 {errors.name && <p className="text-sm mt-1" style={{ color: 'red' }}>{errors.name}</p>}
             </div>
 
             {/* Email */}
-            <div>
+            <div className="form-control">
                 <label htmlFor="email" className="font-semibold block mb-1">
                     Email
                 </label>
@@ -124,18 +123,15 @@ export default function ContactForm() {
                     id="email"
                     name="email"
                     placeholder="you@example.com"
-                    className="w-full px-4 py-2 border rounded-md bg-transparent"
-                    style={{
-                        borderColor: errors.email ? 'red' : 'var(--foreground)',
-                        color: 'var(--foreground)',
-                    }}
+                    className="input input-bordered w-full"
+                    style={{ borderColor: errors.email ? 'red' : undefined }}
                     title="Enter a valid email address"
                 />
                 {errors.email && <p className="text-sm mt-1" style={{ color: 'red' }}>{errors.email}</p>}
             </div>
 
             {/* Message */}
-            <div>
+            <div className="form-control">
                 <label htmlFor="message" className="font-semibold block mb-1">
                     Message
                 </label>
@@ -143,11 +139,8 @@ export default function ContactForm() {
                     id="message"
                     name="message"
                     placeholder="Type your message here..."
-                    className="w-full px-4 py-2 min-h-[150px] border rounded-md bg-transparent"
-                    style={{
-                        borderColor: errors.message ? 'red' : 'var(--foreground)',
-                        color: 'var(--foreground)',
-                    }}
+                    className="textarea textarea-bordered w-full min-h-[150px]"
+                    style={{ borderColor: errors.message ? 'red' : undefined }}
                     title="Write your message"
                 />
                 {errors.message && (
@@ -169,13 +162,8 @@ export default function ContactForm() {
             <button
                 type="submit"
                 disabled={!formspreeAction || isSubmitting}
-                className="w-full flex items-center justify-center gap-2 px-6 py-2 rounded-md font-semibold transition hover:brightness-110"
-                style={{
-                    backgroundColor: 'var(--color-old-rose)',
-                    color: 'var(--pc)',
-                    cursor: isSubmitting ? 'not-allowed' : 'pointer',
-                    opacity: isSubmitting ? 0.6 : 1,
-                }}
+                className="btn btn-primary w-full flex items-center justify-center gap-2"
+                style={{ cursor: isSubmitting ? 'not-allowed' : 'pointer', opacity: isSubmitting ? 0.6 : 1 }}
             >
                 <SendHorizonal className="w-5 h-5" />
                 {isSubmitting ? 'Sending...' : 'Send Message'}

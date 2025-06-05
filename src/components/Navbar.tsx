@@ -19,15 +19,10 @@ export default function Navbar() {
 
     return (
         <nav
-            className="sticky top-0 z-50 shadow-sm border-b transition-colors duration-300"
-            style={{
-                backgroundColor: 'var(--background)',
-                color: 'var(--foreground)',
-                borderColor: 'rgba(0,0,0,0.1)',
-            }}
+            className="navbar sticky top-0 z-50 backdrop-blur bg-base-100/80 shadow-md"
             aria-label="Main navigation"
         >
-            <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-20">
+            <div className="max-w-7xl mx-auto flex-1 flex items-center justify-between px-4 h-20">
                 <Link href="/" className="flex items-center gap-2">
                     <Image
                         src="/logo.png"
@@ -42,12 +37,7 @@ export default function Navbar() {
                 {/* Desktop nav (hidden on mobile) */}
                 <div className="hidden lg:flex items-center space-x-6">
                     {navItems.map((item) => (
-                        <Link
-                            key={item.name}
-                            href={item.href}
-                            className="font-medium hover:underline transition"
-                            style={{ color: 'var(--foreground)' }}
-                        >
+                        <Link key={item.name} href={item.href} className="font-medium hover:underline">
                             {item.name}
                         </Link>
                     ))}
@@ -60,7 +50,6 @@ export default function Navbar() {
                     onClick={() => setMobileOpen((prev) => !prev)}
                     className="lg:hidden p-2"
                     aria-label="Toggle menu"
-                    // Only set aria-controls when the menu is actually in the DOM:
                     aria-controls={mobileOpen ? 'mobile-menu' : undefined}
                     aria-expanded={mobileOpen}
                 >
@@ -76,12 +65,7 @@ export default function Navbar() {
                         animate={{ x: 0, opacity: 1 }}
                         exit={{ x: '100%', opacity: 0 }}
                         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                        className="lg:hidden border-t"
-                        style={{
-                            backgroundColor: 'var(--background)',
-                            color: 'var(--foreground)',
-                            borderColor: 'rgba(0,0,0,0.1)',
-                        }}
+                        className="absolute top-full left-0 w-full lg:hidden border-t bg-base-100/90 backdrop-blur"
                         role="menu"
                         aria-label="Mobile navigation"
                     >
@@ -91,7 +75,7 @@ export default function Navbar() {
                                     key={item.name}
                                     href={item.href}
                                     onClick={() => setMobileOpen(false)}
-                                    className="block text-lg font-medium hover:underline transition"
+                                    className="block text-lg font-medium hover:underline"
                                     role="menuitem"
                                 >
                                     {item.name}
