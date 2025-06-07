@@ -1,84 +1,33 @@
-# 🐾 Pet Age Calculator
+# 🖥️ Personal Portfolio – Pet Age Calculator
 
-A responsive, theme-aware web app that converts pet years to human years and vice versa for dogs and cats. This project's purpose is to continue my passion for front-end development. This is an excuse to practice form handling, dark mode theming, and clean UI/UX with Tailwind CSS and DaisyUI. It is also a handy utility 😊
+This project is my personal portfolio built with **Next.js 15**. It showcases a utility that converts pet years to human years while demonstrating responsive design, animations, and a working contact form.
 
 ## 🌟 Features
+- Interactive pet age calculator for dogs and cats
+- Responsive light and dark themes via `next-themes`
+- Animated components using Framer Motion
+- Accessible UI styled with Tailwind CSS and DaisyUI
+- Contact form powered by Formspree
+- Type-safe code with TypeScript
 
-- 🔢 **Bidirectional Age Conversion**  
-  Convert from pet age to human age or the other way around, for both dogs and cats.
-
-- 🎨 **Light/Dark Theme Support**  
-  Fully responsive and theme-aware with smooth light/dark mode transitions using `next-themes` and CSS variables.
-
-- ✅ **Client-side Validation**  
-  Simple but effective validation with inline error handling.
-
-- 🖥️ **Accessible UI**  
-  Built with accessibility and responsiveness in mind. Uses Tailwind CSS and DaisyUI for consistent styling.
-
-- 💌 **Contact Form**  
-  Integrated with [Formspree](https://formspree.io) for real-world form submission functionality.
-
-## 🛠️ Tech Stack
-
+## 🛠 Tech Stack
 | Tech | Purpose |
 |------|---------|
-| [Next.js 15](https://nextjs.org/) | React framework for building the app |
-| [Tailwind CSS](https://tailwindcss.com/) | Utility-first CSS styling |
+| [Next.js 15](https://nextjs.org/) | React framework |
+| [TypeScript](https://www.typescriptlang.org/) | Static typing |
+| [Tailwind CSS](https://tailwindcss.com/) | Utility-first styling |
 | [DaisyUI](https://daisyui.com/) | Component styling and theming |
-| [Lucide React](https://lucide.dev/) | Icon set for clean UI |
-| [Formspree](https://formspree.io/) | Handles contact form submissions |
-| [TypeScript](https://www.typescriptlang.org/) | Type safety across the app |
+| [Lucide React](https://lucide.dev/) | Icons |
+| [Framer Motion](https://www.framer.com/motion/) | Animations |
+| [Next Themes](https://github.com/pacocoursey/next-themes) | Theme switching |
+| [React Hot Toast](https://react-hot-toast.com/) | Notifications |
+| [Formspree](https://formspree.io/) | Form submissions |
 
-## 📸 Preview
-
-![Pet Age Calculator Screenshot](/public/Screenshot.png)
-
-_Theme-aware, mobile-friendly design with interactive UI components.
-
-Make sure to add your Formspree project ID in .env.local:
-
-
-NEXT_PUBLIC_FORMSPREE_ID=your_form_id_here
-
-## 📂 Project Structure
-```
-src/
-├── app/
-│   ├── about/
-│   │   └── page.tsx               # About page
-│   ├── calculator/
-│   │   └── page.tsx               # Calculator page
-│   ├── contact/
-│   │   └── page.tsx               # Contact page
-│   ├── layout.tsx                 # Root layout
-│   ├── page.tsx                   # Home page
-│   └── globals.css                # Tailwind/DaisyUI styles
-│
-├── components/
-│   ├── calculator/
-│   │   ├── CalculatorForm.tsx     # Input form component
-│   │   └── CalculatorResult.tsx   # Result display component
-│   ├── ContactForm.tsx
-│   ├── Hero.tsx
-│   ├── Navbar.tsx
-│   └── ThemeToggle.tsx
-│
-├── lib/
-│   └── calculateAge.ts            # Core age logic
-```
-
-
-## 🎯 Purpose of This Project
-
-My family recently welcomed a new kitten, and naturally, the question came up: *"How old is she in human years?"* After doing some research, I realized that the common idea of just multiplying by 7 or adding 14 per year doesn’t reflect the actual biology of pet aging. The real conversion varies by species and age.
-
-As a developer and a parent, I decided to let JavaScript do the math. This app was built so I could give my kids accurate answers anytime they asked about our pet’s age. At the same time, it became a great opportunity to demonstrate my front-end development skills, design sense, and ability to turn a real-world question into a polished, responsive tool.
-
+## 📸 Screenshots
+![Portfolio Screenshot](/public/Screenshot.png)
 
 ## 🚀 Getting Started
-
-To run this project locally:
+Clone the repo and start the development server:
 
 ```bash
 git clone https://github.com/RW2023/pet-age-calculator.git
@@ -87,3 +36,36 @@ npm install
 npm run dev
 ```
 
+Create a `.env.local` file with your Formspree ID:
+
+```env
+NEXT_PUBLIC_FORMSPREE_ID=your_form_id_here
+```
+
+## 📂 Project Structure
+```
+src/
+  app/
+    about/
+      page.tsx               # About page
+    calculator/
+      page.tsx               # Calculator page
+    contact/
+      page.tsx               # Contact page
+    layout.tsx               # Root layout
+    page.tsx                 # Home page
+    globals.css              # Tailwind/DaisyUI styles
+  components/
+    calculator/
+      CalculatorForm.tsx     # Input form component
+      CalculatorResult.tsx   # Result display component
+    ContactForm.tsx
+    Hero.tsx
+    Navbar.tsx
+    ThemeToggle.tsx
+  lib/
+    calculateAge.ts          # Age conversion utilities
+```
+
+## ✉️ Contact
+For questions or feedback, feel free to open an issue or reach out through the contact form on the site.
