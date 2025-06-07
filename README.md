@@ -1,6 +1,6 @@
-# 🖥️ Personal Portfolio – Pet Age Calculator
+# 🖥️ Pet Age Calculator
 
-This project is my personal portfolio built with **Next.js 15**. It showcases a utility that converts pet years to human years while demonstrating responsive design, animations, and a working contact form.
+This project is a utility that converts pet years to human years while demonstrating responsive design, animations, and a working contact form.
 
 ## 🌟 Features
 - Interactive pet age calculator for dogs and cats
