@@ -24,7 +24,7 @@ This project is a utility that converts pet years to human years while demonstra
 | [Formspree](https://formspree.io/) | Form submissions |
 
 ## 📸 Screenshots
-![Portfolio Screenshot](public/Screenshot.png)
+![Screenshot](https://www.ryan-w.dev/projects/pet.png)
 
 ## 🚀 Getting Started
 Clone the repo and start the development server:
